@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: 'Ownglyph_noocar-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_noocar-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'Ownglyph_noocar-Rg';
+    /* *(전체선택자) 사용시, 모든 글자가 해당 폰트로 나오기 때문에,
+        본문용 폰트를 작성하는 것을 추천!
+        
+        제목용 폰트는 따로 class를 생성해서 설정하는 것을 추천
+        (class가 *보다 우선순위니까!)*/
+    
+}
