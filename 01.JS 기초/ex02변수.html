@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log('num' , num); //undefined  :호이스팅개념(출석부처럼 존재여부를 미리 흝어봄)
+        // console.log('etc', sfsdf);  //오류     :호이스팅개념
+
+        // 변수 선언 & 초기화
+        // var : 재선언, 재할당 가능
+        var num = 3;
+        var num = 5; //재선언 가능
+        num = 7; //재할당 가능
+        console.log(num);
+        
+        // console.log('num1', num1);  //오류:선언되기전에접근불가 >>TDZ에 잠깐 두자! >>어느정도 호이스팅 해결(완전히 해결X)
+
+        // let : 재선언 불가능. 재할당 가능.
+        let num1 = 10;
+        num1 = 20;
+        console.log(num1);
+
+        // cost :재선언, 재할당 불가능 (상수 정의)
+        let num2 = 30;
+        console.log(num2);
+
+        var name = prompt("이름을 입력하세요")  //변수에 prompt기능도 담을 수 있음
+        console.log("반갑습니다 "+name+"님 안녕하세요");
+
+        /*
+        호이스팅 (hoisting)
+        : 인터프리터(interpreter해석기)가 변수와 함수의 선언 순서와 관계 없이
+        끌어올려서 미리 메모리 공간을 할당하는 것을 의미.
+        
+        var로 선언한 변수는 호이스팅 현상 O >> 선언 이전에 사용 가능
+        
+        보완된 변수 : let, const
+        >> 오류 : cannot access '변수' before initialization "변수 선언되기 전엔 접근할 수 없음"
+        >> let과 const로 선언한 변수가 호이스팅의 예외가 되지는 않음. (완전한 해결x) 
+           TDZ(Temporal Dead Zone) 일시적으로 죽어있는 공간 안에 보관을 해서 선언 전까지는 접근만! 못하도록 설정.
+        */
+
+
+
+
+    </script>
+</body>
+</html>

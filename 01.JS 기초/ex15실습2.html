@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 현재 몸무게와 목표 몸무게를 입력받아서, 
+        // 이후 주차별 감량 몸무게를 입력받고 목표 몸무게를 달성하면 
+        // "00kg 달성! 축하합니다." 라고 출력하고 프로그램을 종료 
+
+        // [실행 결과] - console
+        // 현재 몸무게 : 00KG
+        // 목표 몸무게? : 00KG
+        // 1주차 감량 몸무게 : 00KG
+        // ...
+        // 4주차 감량 몸무게 : 00KG 
+        // 00KG 달성! 축하합니다! 
+
+        // STEP 1. 현재 몸무게를 입력받는다.
+        // STEP 2. 목표 몸무게를 입력받는다.
+        // STEP 3. 현재 몸무게와 목표 몸무게가 같아질 때 까지 프로그램을 반복 
+        // STEP 4. 현재 몸무게와 목표 몸무게가 같지 않을 경우에는
+        //         반복해서 감량 몸무게를 입력받는다. 
+        // STEP 5. STEP3에 만족할 때 까지 STEP 4를 반복한다. 
+
+        let currentWeight = parseInt(prompt('현재 몸무게'))  
+        let goalWeight = parseInt(prompt('목표 몸무게'))
+
+        let week = 1
+
+        while(true){
+            if(currentWeight === goalWeight){
+                console.log(goalWeight+'kg 달성! 축하합니다!')
+                break;
+            } else{
+                currentWeight -= (prompt(week+'감량 몸무게'))   // 복합대입연산자
+                week++
+            }
+        }
+
+    </script>
+</body>
+</html>

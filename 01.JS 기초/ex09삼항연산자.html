@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>🍊오렌지🍊를 포장하자</h2>
+    <script>
+        // 1. 한 박스에 담을 수 있는 오렌지 수를 입력하세요. (boxOrange)  // 5개
+        // 2. 현재 내가 가진 오렌지의 개수를 입력하세요. (curOrange)      // 31개
+        // 3. 개수에 따라 필요한 박스의 수를 출력하시오.
+        //  결과 : 필요한 박스의 수 : 7개 
+
+        let boxOrange = Number(prompt("한 박스에 담을 오렌지의 개수를 입력해주세요"))
+        let curOrange = Number(prompt("현재 오렌지의 개수를 입력해주세요"))
+
+        console.log("한 박스에 담을 오렌지 수:", boxOrange)
+        console.log("현재 오렌지 개수:", curOrange)
+
+        let perfBox = parseInt(curOrange/boxOrange)
+        // JS에서 몫을 구하고 싶을 땐, '/'연산자로 나눈 값에 ParseInt를 씌워주자
+
+        let ans = curOrange%boxOrange === 0 ?  perfBox : perfBox+1
+        console.log("필요한 박스의 수:", ans)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           - 함수 : 작업을 수행하는 명령문의 집합
+           - 배열 함수 : 배열을 편하고 다양하게 사용하기 위한 도구들
+        */
+
+        let list = ['아이유','수지','태연']
+
+        // 1. 배열명.includes('찾고싶은요소')   // 검색
+        //    - boolean 을 반환한다.
+        console.log('아이유 라는 데이터가 있을까?', list.includes('아이유'))
+        console.log('아이유 라는 데이터가 있을까?', list.includes('장원영'))
+
+        // 2. 배열명.indexOf('찾고싶은 요소')
+        //  - 배열 내 인덱스를 반환, 없을 경우는 -1을 반환
+        console.log('아이유 라는 데이터의 위치', list.indexOf('아이유'))
+        console.log('장원영 라는 데이터의 위치', list.indexOf('장원영'))
+
+        // 3. 배열명.slice(시작인덱스, 끝인덱스+1)
+        //   - 작성한 인덱스 사이의 요소들을 잘라내 새로운 배열로 반환
+        console.log(list.slice(1,3))
+        console.log(list.slice(1))        // 끝 인덱스 범위를 안 적어주면, 끝까지로 인식함
+
+        // 4. 변수명.split(구분자)
+        // string을 array로 만들어주는 함수
+        let text = '반/갑/습/니/다'
+        console.log(text.split('/'))
+
+        // 5. 배열명.join()
+        // 배열의 모든 요소를 연결해 하나의 string으로 만들어주는 함수 (split함수와 반대)
+        console.log(list.join())     // 빈칸으로 두면 구분자는 쉼표
+        console.log(list.join('/'))  // 구분자 지정가능
+          
+    </script>
+</body>
+</html>

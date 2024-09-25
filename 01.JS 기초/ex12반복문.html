@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 예제1
+        // 100~1까지 수를 출력하는 프로그램을 구현하시오
+        for(let i=100; i>0; i--){
+            console.log(i);
+        }
+
+        //예제2
+        // 1~20까지의 숫자 중 홀/짝수의 합과 숫자들이 각각 출력되도록 구현하시오
+
+        // 복합대입연산자 사용(num+=num)
+
+        let evenSum = 0;  //숫자형
+        let oddSum = 0;
+        let even = ''; //문자형
+        let odd ='';
+
+        for(i=1; i<21; i++){        // 반복문 사용(초기화 조건식 작업후처리)
+            if(i%2===0){            // 나머지가 0이면 짝수
+                even += i + ' '    // 문자열+숫자=문자열   // (even = even + i + ' ' 의미)
+                evenSum += i   //복합대입연산자 활용 (evenSum = evenSum + i 의미)
+            }else{odd += i + ' '
+            oddSum += i
+            }
+        }
+
+        console.log(`${even}의 합: ${evenSum}`);    // 2 4 6 8 10 12 14 16 18 20 의 합: 110
+        console.log(`${odd}의 합: ${oddSum}`);    // 1 3 5 7 9 11 13 15 17 19 의 합: 100
+
+    </script>
+</body>
+</html>

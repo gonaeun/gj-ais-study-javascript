@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환 - 1. 자동 형 변환
+        console.log(10 + '10');   //1010  문자열+숫자열=문자열
+        console.log(20 + 30);    //50
+        console.log('10' + true);  //10true
+
+        // 형변환 - 2. 강제 형 변환
+        // 자료형 -> 숫자형 : Number() 숫자로 변환, parseInt() 정수로 변환, parseFloat() 실수로 변환
+        console.log(10 + Number('10'));  //20 
+        console.log(10 + parseInt('10.5'));  //20
+        console.log(10 + parseFloat('10.5'));   //20.5
+
+        // 자료형 -> 문자열
+        // - String
+        console.log(String(10));  //문자10
+
+        // - 변수(숫자형데이터).toString() : 숫자형 데이터가 담긴 변수에 활용
+        let num = 10;
+        console.log(num.toString());  //문자10
+
+        // - 변수(숫자형데이터).toFixed() : 소수점 자리수를 제어하기 위해 사용
+        let num2 = 3.14;
+        console.log(num2.toFixed());  //문자3
+        
+        console.log(num2.toFixed(1));  //문자3.1  // ()안에 숫자를 넣어 원하는 소수점까지 표현 가능
+
+        
+
+    </script>
+</body>
+</html>

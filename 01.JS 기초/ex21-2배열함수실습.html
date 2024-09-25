@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title></title>
+  
+</head>
+<body>
+    <script>
+        let fruits = [
+            "apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit", 
+            "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+            "peach", "pineapple", "shine muscat", "strawberry", "tomato", 
+            "water melon", "yuja"
+         ];
+        
+        // 1. fruits 라는 배열에 "yuja" 삭제하기 
+        fruits.pop()
+        console.log(fruits)
+        // 2. fruits 라는 배열에 "grapefruit" 추가하기
+        fruits.push('grapefruit')
+        console.log(fruits)
+        // 3. fruits 라는 배열에 "cherry tomato", "pine nut", "korean blackberry" 추가하기 
+        fruits.push("cherry tomato", "pine nut", "korean blackberry")
+        console.log(fruits)
+        // 4. fruits 라는 배열에 "orange" 가 있는지 확인하기
+        console.log(fruits.includes('orange'))
+        // 5. fruits 라는 배열에 "kiwi" 가 있는지 확인하기 
+        console.log(fruits.includes('kiwi'))
+        // 6. fruits 라는 배열에 "water melon" 을 "melon"으로 변경하기 
+        fruits[19] = 'melon'
+        console.log(fruits)
+        // 7. fruits 라는 배열에 "lime" 부터 3개의 요소를 삭제하기 
+        fruits.splice(9,3)
+        console.log(fruits)
+        // 8. fruits 라는 배열에 "shine muscat" 이후의 값을 제거하기 
+        fruits.splice(13)
+        console.log(fruits)
+        // 9. fruits 라는 배열에 "pear" 부터 "pine apple" 까지 가져와서 새로운 배열에 저장하기.
+        console.log(fruits.slice(10,13))
+        // 10. fruits 라는 배열을 하나의 string으로 변환하기, 이 때 구분자는 과일1 and 과일2 and ~ 
+        console.log(fruits.join(' and '))
+
+    </script>
+</body>
+</html>

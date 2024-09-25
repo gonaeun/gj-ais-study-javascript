@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 객체 (Object)
+         - JS는 객체 기반의 스크립트 언어이며, JS를 이루고 있는 대부분이 객체.
+         - 여러 속성을 하나의 변수에 저장할 수 있는 데이터 타입
+         - key-value 형식으로 저장 가능
+         - 중괄호 표기 이용
+         - 한쌍의 key/value 가 왔다면, 그 뒤에 오는 key/value와 ,로 구분
+         - 객체 안에 함수 넣을 수 있음
+        */
+        
+        // 사용자 정의 객체
+        let person = {
+            name : '고나은',
+            sub : 'WEB',
+            gender : 'woman',
+            skill : function(){console.log('백만볼트!')}
+        }
+
+        console.log(person);
+
+
+        // ** 객체 출력 : 객체 접근에 필요한 기호 (.)
+        // 1. 객체 안에 값이 일반 데이터인 경우
+        // 1-1) 객체이름.속성
+        console.log(person.name);
+
+        // 1-2) 객체이름['속성']
+        console.log(person['sub']);
+
+        // 2. 객체 안에 값이 함수인 경우
+        // 객체이름.속성()
+        person.skill()   // person이라는 객체에 skill이라는 속성 안에 저장되어있는 함수 호출!
+
+        /* 예제) 좋아하는 세 종류의 포켓몬으로 객체를 생성하고 정보 출력
+             (1) poketmon1
+             - 이름, 도감번호, 타입, 색상, 포획률, 기술(함수)
+             (2) poketmon2
+             - 위와 같은 속성
+             (3) poketmon3
+             - 위와 같은 속성
+
+             [console 결과창]
+             TOP 1. 메타몽, ~ ,~ ,~ ,~  
+             기술을 console창으로 출력
+             TOP 2. 메타몽, ~ ,~ ,~ ,~  
+             기술을 console창으로 출력
+             TOP 3. 메타몽, ~ ,~ ,~ ,~  
+             기술을 console창으로 출력
+        */ 
+       
+        let pocketmon1 = {
+            이름 : '푸린',
+            도감번호 : '39',
+            타입 : '노말/페어리',
+            색상 : '연핑크',
+            포획률 : '170',
+            skill : function(){console.log('노래하기')}
+        }
+
+        let pocketmon2 = {
+            이름 : '토게피',
+            도감번호 : '175',
+            타입 : '페어리',
+            색상 : '노랑',
+            포획률 : '190',
+            skill : function(){console.log('행복해져라')}
+        }
+
+        let pocketmon3 = {
+            이름 : '에몽가',
+            도감번호 : '144',
+            타입 : '전기/비행',
+            색상 : '하양',
+            포획률 : '200',
+            skill : function(){console.log('볼트체인지')}
+        }
+        console.log(pocketmon1);
+        pocketmon1.skill();
+        console.log(pocketmon2);
+        pocketmon2.skill();
+        console.log(pocketmon3);
+        pocketmon3.skill();
+
+
+
+    </script>
+</body>
+</html>

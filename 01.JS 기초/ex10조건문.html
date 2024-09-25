@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 조건문
+        // 1. 단순if문
+        // - if라는 예약어 사용
+        // - 조건식이 true일 경우에만 동작. / 조건식이 false일 경우 실행되지 않고 끝.
+        if (true) {
+            console.log('실행문장 실행');
+        }
+        if (false) {
+            console.log('실행문장 실행2');
+        }
+
+        // 예제1
+        // money 변수의 값이 10000원 이상이면 '돈을 출금한다'를 출력하시오
+
+        let money = 15000;
+        if (money >= 10000) {
+            console.log('돈을 출금한다')
+        }
+
+        // 2. if ~ else 문
+        // 조건식이 참이면 if구문 안에 있는 실행문장 출력, 조건식이 거짓이라면 else 구문 안에 있는 실행문장 출력
+        if (true) {
+            console.log('실행문장1 실행');
+        }else{
+            console.log('실행문장2 실행')
+        }                                   // 실행문장1 실행
+
+        if (false) {
+            console.log('실행문장1 실행');
+        }else{
+            console.log('실행문장2 실행')
+        }                                   // 실행문장2 실행
+
+        // 예제2
+        // !, &&, ||, 조건(삼항)연산자
+        // 2의 배수와 6의 배수 >> 공배수 12 (true)
+        // 숫자를 입력 -> prompt -> 변수에 담기
+        // if (2의 배수이면서 6의 배수라면) -> 참 -> '2와 6의 배수입니다.'
+        // else -> '2와 6의 배수가 아닙니다.'
+        // console.log()
+
+        let num = parseInt(prompt("숫자를 입력하시오"));
+        if  ((num%2===0) && (num%6===0)) {
+            console.log(num + '은(는) 2와 6의 배수입니다.')
+        }else{
+            console.log(num + '은(는) 2와 6의 배수가 아닙니다.')
+        }
+        // 오답정리) 배수 : 나눴을때 나머지가 0 >> 나머지연산 쓰는게 좋음
+
+        // 3. 다중 if문
+        // 여러 조건식 중 참인 경우의 실행문장을 동작시키는 구문
+        if (false) {
+            console.log('실행문장1 실행');
+        }else if(false) {
+            console.log('실행문장2 실행');
+        }else if(false) {
+            console.log('실행문장3 실행');
+        }else{
+            console.log('실행문장4 실행');
+        }                                   // 실행문장4 실행
+
+        // 예제3
+        // 비교연산자 사용
+        let num1 = parseInt(prompt("첫번째 숫자를 입력하세요"));
+        let num2 = parseInt(prompt("두번째 숫자를 입력하세요"));
+
+        if(num1>num2) {
+            console.log("첫번째 입력한 값이 더 큰 수입니다.");
+        }else if(num1<num2) {
+            console.log("두번째 입력한 값이 더 큰 수입니다.");
+        }else{
+            console.log("두 수는 같습니다.")
+        }
+
+    </script>
+    
+</body>
+</html>
