@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>키보드로 어떤 키를 누르는지 확인해보기!</h1>
+    <p>누른 키코드 : <span id="span1"></span></p>
+    <p>누른 키 : <span id="span2"></span></p>
+
+    <script>
+        // 키보드로 입력한 값들을 검색!
+        const span1 = document.getElementById("span1");
+        const span2 = document.getElementById("span2");
+        // 사용자가 키보드를 누르면 어떤 값이 나오는지 체크
+        // 키코드 vs 키값
+        // 키코드 : 각각 키마다 가자ㅣ고 있는 고유한 값 (중복x)
+        // 키값 :  키보드에 보이는 글자 그대로를 출력 (중복o)
+        // 키코드가 필요한 이유 : 키보드에 있는 같은 모양(+,1)의 값들을 정확하게 구별하기 위해서
+        window.addEventListener("keydown",(e)=>{ 
+            console.log("키코드", e.keyCode);
+            console.log("키값", e.key);
+            span1.innerText = e.keyCode
+            span2.innerText = e.key
+        });
+
+    </script>
+</body>
+</html>

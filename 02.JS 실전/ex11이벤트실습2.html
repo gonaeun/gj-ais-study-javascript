@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputTxt"> 
+    <p id="container"></p>
+
+    <script>
+        // 1. id가 inputTxt인 input 요소를 가져와서 inputTxt라는 변수에 저장한다. 
+        let inputTxt = document.getElementById('inputTxt')
+
+        // 2. 그 inputTxt 요소가 "변경될때마다" inputTxt 안에 있는 값(value)을 console에 확인
+        inputTxt.addEventListener('change', ()=>{
+            console.log(inputTxt.value)
+            document.getElementById('container').innerText = inputTxt.value
+        })
+
+        // 3. 가져온 값을 id 가 container인 p태그 안에 입력 (innerText)
+        // 오답정리) 가져온 값을 P태그 안에 입력하려면, 해당 코드는 change 이벤트리스너 코드 안에 원하는 실행함수 창에 적어주자!
+        //           "변경될떄마다" 콘솔에 값이 출력되고, "변경될때마다" p태그 안에 입력되길 원하는거니까!
+        // 함수 사용 자유 
+        // 우리가 사용할 이벤트는 'change' 입니다.
+        // 내용 입력 후 + Enter => change 감지
+
+
+
+    </script>
+</body>
+</html>

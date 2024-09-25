@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="light">
+        <h1>
+            인공지능사관학교
+        </h1>
+        <button id="btnText" onclick="changeMode()">dark 모드</button>
+    </div>
+    <script>
+        // 1. changeMode 라는 이름의 함수 선언
+        // 2. " dark모드" 라는 버튼 클릭 시, "light모드"라고 버튼 내용을 바꿔주고
+        //    " light모드" 라는 버튼 클릭 시, "dark모드"라고 버튼 내용을 바꿔주자
+        //    => id가 btnText인 요소를 가져온다 => 그 안에 있는 글자 변경
+        //     => 단, 현재 모드가 darkMode인지 lightMode인지 구분 후 변경 
+        // 3. class가 light => 버튼 클릭시 => class가 dark 디자인 변경 
+
+        const changeMode = () => {
+            console.log('changeMode Func');    // 함수 선언 확인용 
+
+            let btnText = document.getElementById("btnText")
+            let container = document.getElementById("container")   // class(=light)는 여기에 있으니까 해당 id도 가져와야해
+
+
+            container.classList.toggle('light')   // 만약 light가 있으면 light 삭제해줄게
+            container.classList.toggle('dark')    // 만약 dark가 없으면 dark 만들어줄게  >> 스위치 형태
+            // 토글 안해주면, 밑의 코드들 실행해줘도, 현 상태가 light일 때 상태가 바뀌지 않아븜
+
+            // Case1. if~else문 사용
+            if (container.classList.contains("light")) {
+                btnText.innerText = "light 모드"
+            } else {
+                btnText.innerText = "dark 모드"
+            }  
+
+            // Case2. 삼항연산자 사용
+            // btnText.innerText == "dark 모드" ? btnText.innerText = "light 모드" : btnText.innerText = "dark 모드"
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

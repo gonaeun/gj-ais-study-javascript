@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>X와 Y좌표를 구하세요!</h1>
+    <div id = "area"></div>
+    <script>
+        // 사용자가 클릭한 마우스의 위치(x,y)
+        // 1. 이벤트를 부여할 요소를 검사
+        const div = document.getElementById("area")
+        // 2. div를 클릭했을 때, x,y좌표를 alert로 출력
+        div.addEventListener("click", (e)=>{
+               //오답노트) 매개변수를 적는 이유 : div에 관련된 event에 접근하기 위해, event를 매개변수로 적어줌
+               //          매개변수 자리에 하나 추가로 넣으면, event라고 인식함
+            const x = e.pageX;     // pageX라는 key의 value
+            const y = e.pageY;     // pageY라는 key의 value
+            alert(`클릭한 위치의 X좌표는 ${x}, Y좌표는 ${y}입니다!`)
+        })
+
+        // 좌표를 활용하는 방법
+        // 1. 사용자가 클릭한 위치 값을 가져온다
+        // 사용처 : 게임캐릭터 이동, 캡쳐영역을 설정
+
+    </script>
+</body>
+</html>

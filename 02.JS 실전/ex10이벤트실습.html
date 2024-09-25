@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1Tag">마우스를 올려주세요!</h1>
+    <button id="btn">클릭!</button>
+
+    <script>
+        // 1. id가 btn인 버튼 클릭시. "클릭 이벤트 발생"이라는 팝업창 띄워줌
+        //   - 조건 : 리스너 방식으로 이벤트 작성
+        //   - 함수는 어떤 방식으로 써도 ㅇㅋ. 단 1,2번 문제는 다르게 작성
+
+        // 2. id가 h1Tag인 h1 위에 마우스를 올렸을 시, "마우스 hover"라는 팝업창 띄워줌
+        //   - 조건 : 리스너 방식으로 이벤트 작성
+        //   - 함수는 어떤 방식으로 써도 ㅇㅋ. 단 1,2번 문제는 다르게 작성
+    
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', ()=>{
+        alert('클릭 이벤트 발생')
+    })   // 익명함수 작성 방법 사용
+
+    const popUp = ()=>{
+        alert('마우스 hover')
+    }    // 함수 선언 방법 사용
+
+    const h1tag = document.getElementById('h1Tag')
+    h1tag.addEventListener('mouseover', popUp)
+
+    </script>
+</body>
+</html>

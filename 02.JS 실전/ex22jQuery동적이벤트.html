@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <button id="addBtn">버튼 추가하기</button>
+    <div id="container"></div>
+
+    <script>
+        // 1) id가 addBtn인 버튼을 눌렀을 때
+        // 2) id가 container인 공간 안에 새로운 버튼 생성 (jQuery의 html 메소드를 이용)
+        // 이 때, 새로운 버튼의 id는 newBtn이고. 내용은 "새로운 버튼"
+
+        $('#addBtn').click(()=>{
+            $('#container').html('<button id="newBtn">새로운버튼</button>')
+        })
+
+        // // 새로 생긴 버튼에 이벤트를 걸어볼까
+        // $('#newBtn').click(()=>{
+        //     console.log('new button!');
+        // })
+        //    >> JS이 newBtn 인식을 못함
+
+        /*  **동적 이벤트 바인딩
+        - .click() : 최초 페이지를 로딩할 때 선언되어 있던 요소에 이벤트 바인딩
+                    => 그 이후로는 더이상 바인딩x
+
+        - 클릭할 대상이 포함되어 있는 공간
+            .on('click', 클릭될대상, 함수) : 동적으로 추가된 요소에 이벤트 바인딩을 걸어준다
+            $(document) >> 최상위계층이라서 자주 사용
+
+        */
+
+        $(document).on('click','#newBtn', ()=>{
+            console.log('new button');
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="num">
+        0
+    </p>
+
+    <!-- 이 버튼을 클릭하면 increase 라는 함수를 호출해줄게.  -->
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+
+    <script>
+        /*
+        버튼을 클릭했을 때, 웹 페이지의 숫자를 카운팅하는 프로그램을 구현하라
+
+        1. increase라는 함수를 선언하고 (화살표)버튼을 눌렀을 때 그 함수가 호출되는지 확인
+            - console : "increase function called"
+
+        2. decrease라는 함수를 선언하고 (화살표)버튼을 눌렀을 때 그 함수가 호출되는지 확인
+            -console : "decrease function called"
+
+        3. "0"이라는 숫자요소를 문서에서 가지고 와서 변수 num에 저장
+        4. increase라는 버튼을 누르면, 0이 하나씩 증가하고
+           decrease라는 버튼을 누르면 0이 하나씩 감소하도록 하겠다
+
+        5. 이때, decrease 버튼을 누르더라도 음수로 가지는 않도록 지정
+        */
+
+        const increase = ()=>{
+            console.log("증가함수 호출 됐니?") 
+            // 만약 increase 호출이 잘 되었다면 이 콘솔을 실행해줘 
+
+            let num = document.getElementById('num')   // 상단 p태그를 JS로 호출해서 num으로 선언
+            // console.log(num);            // <p id="num">0</p>
+            // console.log(num.innerText);                // 문자 0
+            console.log(parseInt(num.innerText));   // 숫자 0 
+
+            num.innerText = parseInt(num.innerText)+1
+            // parseInt 안 적으면, 문자형이라서 111111 이렇게 출력됨
+
+            }
+        
+
+        const decrease = ()=>{
+            console.log("감소함수 호출 됐니?")
+            // 감소함수 호출 잘 됐는지 확인용으로, 버튼 클릭시 콘솔창에 실행됨
+
+            let num = document.getElementById('num')
+            console.log(parseInt(num.innerText));   // 숫자 0 
+
+            // Case1) 삼항연산자 (0일땐 '-' 눌러도 음수가 되지 않도록)
+            num.innerText = parseInt(num.innerText)>0 ? parseInt(num.innerText)-1 : 0 
+
+            // Case2) 단순if문 (0일땐 '-' 눌러도 음수가 되지 않도록. 0이상일때만 작동)
+            if(parseInt(num.innerText) > 0){
+                num.innerText = parseInt(num.innerText) -1
+            }
+            }
+            
+    </script>
+</body>
+</html>

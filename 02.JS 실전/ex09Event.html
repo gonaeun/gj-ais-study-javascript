@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="h1Tag">오늘의 점심은?</h1>
+    <button onclick="popUp()">1) 인라인방식</button>
+    <button id="btn_han">2) 이벤트 핸들러</button>
+    <button id="btn_lis">3) 이벤트 리스너</button>
+
+    <script>
+        /* Event : 웹페이지에서 사용자에 의해 발생되는 사건
+                - 마우스를 클릭했을 때, 마우스를 올렸을 때 등등..
+                1) 인라인 방식
+                - HTML 태그에 직접 함수의 이름 작성
+                 ex. <button onclick = 함수이름()></button>
+                 - 단점 : 개발자 도구를 통해 함수명 노출됨 >> 보안상의 위험
+                          한 요소당 하나의 이벤트만 등록 가능
+                2) 이벤트 핸들러 (Event Handler)
+                - 사용자가 이벤트를 발생시켰을 때, 그 이벤트에 대응하여 처리하는 함수
+                3) 이벤트 리스너 (Event Listener)
+        */
+
+    // 실습을 위한 준비물 함수 2개
+    const popUp = ()=>{
+        alert('김치찌개')
+    }
+
+    const popUp2 = ()=>{
+        alert('성심당')
+    }
+
+    // 버튼들을 클릭 시, 각각 다른 방법을 이용해서 호출 함수
+    // 2. 이벤트 핸들러
+    //  - 하나의 이벤트만 처리 가능, html 요소에서는 보이지 않음(인라인 방식보다는 보안 굿.)
+    let btn_han = document.getElementById('btn_han')
+    btn_han.onclick = popUp        // popUp에 소괄호를 붙이면 조건이랑 상관없이 호출 되니까, 조건부로 하려면 이렇게!
+    btn_han.onclick = popUp2       // 하나의 이벤트(팝업2)만 출력됨
+
+    // 3. 이벤트 리스너(★★★★★(핸들러 잘 안씀))
+    // - 가장 권장하는 방식
+    // - 하나의 이벤트에 여러 이벤트 핸들러 등록 가능
+    // 요소.addEventListener('이벤트명', 실행할 함수)
+
+    // ***Tip!
+    // - document에서 DOM요소를 가져올 때, 변수 선언에는 요소자체를 넣는 것이 사용하기에 가장 용이함
+    //   ex. let txt = document.getElementById('txt')  (o)
+    //그러나 let txt = document.getElementById('txt').value  (사용에 한계가 있음)
+
+    let btn_lis = document.getElementById('btn_lis')
+    btn_lis.addEventListener('click', popUp)
+    btn_lis.addEventListener('click', popUp2)        // 두개의 팝업 모두 출력됨
+
+    // Tip! 함수를 직접 작성하는 경우 
+    // - ★익명함수 : 이름 없는 함수. 함수 이름 없이 function 이용
+        // (굳이 여러번 쓸게 아니라면, 함수의 이름을 선언할 필요 없이 익명함수 사용 >> 호이스팅현상x, 메모리x)
+    btn_lis.addEventListener('click', ()=>{
+        alert('직접 등록한 함수')
+    })
+
+    </script>
+</body>
+</html>

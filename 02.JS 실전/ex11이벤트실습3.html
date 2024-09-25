@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputTxt1"> <br><br>
+    <input type="text" id="inputTxt2"> <br><br>
+    <button id="btn">연산결과</button> <br><br>
+    <p id="container"></p>
+
+    <script>
+    let inputTxt1 = document.getElementById('inputTxt1')
+    let inputTxt2 = document.getElementById('inputTxt2')
+    let btn = document.getElementById('btn')
+
+    inputTxt2.addEventListener('change', ()=>{          // btn 버튼에 함수 걸어줄거면 change말고 click으로!
+            let result = parseInt(inputTxt1.value) + parseInt(inputTxt2.value)
+            document.getElementById('container').innerText = `연산결과: ${result}`
+        })
+
+    </script>
+</body>
+</html>
